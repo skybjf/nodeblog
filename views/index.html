@@ -9,13 +9,15 @@
         <li class="media">
             <div class="media-left">
                 <a href="#">
-                    <img class="media-object" src="<%=article.user.avatar%>" alt="<%=article.user.username%>">
+                    <img class="media-object" src="<%=article.user.avatar%>" alt="<%=article.user.username%>" width="64" height="64">
                 </a>
             </div>
             <div class="media-body">
                 <h4 class="media-heading"><a href="/articles/detail/<%=article._id%>"><%=article.title%></a></h4>
-                <p><%-article.content%></p>
-                <img src="<%=article.img%>" style="width:100px;height:100px" alt="">
+                <p><%- article.content %></p>
+                <p>
+                    <img src="<%=article.img%>" style="max-height:200px" alt="">
+                </p>
             </div>
         </li>
            <%

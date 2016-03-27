@@ -10,9 +10,12 @@ router.get('/', function(req, res, next) {
             req.flash('error', error);
             return res.redirect('/');
         }
+        console.log(articles);
         articles.forEach(function(article) {
+            // article.content =1111;
             article.content = markdown.toHTML(article.content);
         });
+        console.log(articles);
         res.render('index', { articles: articles });
     });
 });

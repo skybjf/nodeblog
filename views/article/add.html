@@ -1,21 +1,25 @@
 <%- include ../include/header.html %>
     <div class="container">
-        <form action="/articles/add" method="post" role="form" class="form-horizontal">
+        <form action="/articles/add" method="post" role="form" class="form-horizontal" enctype="multipart/form-data">
+            <input type="hidden" name="_id" value="<%=article._id%>">
             <div class="form-group">
                 <label for="title" class="col-sm-2 control-label">标题</label>
                 <div class="col-sm-10">
-                    <input type="text" value="" class="form-control" id="title" name="title" placeholder="标题" />
+                    <input type="text" value="<%=article.title%>" class="form-control" id="title" name="title" placeholder="标题" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="content" class="col-sm-2 control-label">正文</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="" cols="30" rows="10" id="content" name="content" placeholder="请输入内容"></textarea>
+                    <textarea class="form-control" id="" cols="30" rows="10" id="content" name="content" placeholder="请输入内容">
+                        <%=article.content%>
+                    </textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label for="content" class="col-sm-2 control-label">图片</label>
                 <div class="col-sm-10">
+                    <img src="<%=article.img%>" alt="" style="max-height:200px">
                     <input type="file" id="img" name="img" class="form-control">
                 </div>
             </div>

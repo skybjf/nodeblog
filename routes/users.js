@@ -41,7 +41,7 @@ router.post('/login', validate.checkNoLogin, function(req, res) {
     userModel.findOne(user, function(err, doc) {
         if (err) {
             req.flash("error", "登录失败了");
-            res.redirect('back');
+            return res.redirect('back');
         } else {
             req.session.user = doc;
             req.flash("success", "登录成功了");
