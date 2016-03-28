@@ -22,7 +22,7 @@ var upload = multer({ storage: storage });
 /* GET users listing. */
 // 请求空白发表文章页面
 router.get('/add', function(req, res) {
-    res.render('article/add', { articles: {} });
+    res.render('article/add', { article: {} });
 });
 
 // 提交文章数据
